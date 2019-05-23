@@ -26,7 +26,12 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie >= 10"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "postcss-loader": "^3.0.0"
   }
 }

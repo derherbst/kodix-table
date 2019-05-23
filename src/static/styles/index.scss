@@ -1,6 +1,7 @@
-@import "normalize";
-@import "fonts";
-@import "mixins";
+@import "normalize.scss";
+@import "fonts.scss";
+@import "variables.scss";
+@import "mixins.scss";
 
 html {
 	font-size: 16px;

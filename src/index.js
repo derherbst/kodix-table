@@ -3,8 +3,9 @@ import 'core-js/es/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
 
 import './static/styles/index.scss';
+
+import App from './components/page';
 
 ReactDOM.render(<App />, document.getElementById('root'));

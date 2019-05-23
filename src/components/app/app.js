@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import './index.scss';
+import CarAddForm from '../car-add-form';
+import CarTable from '../car-table';
 
 const App = () => {
 	return (
-		<main role="main" className="container">
-1213132
-		</main>
-	);
+		<div className='app'>
+			<div className="app__title">¡Ay caramba!</div>
+			<div className="app__form">
+				<CarAddForm />
+				<CarTable />
+			</div>
+		</div>
+	)
 };
 
 export default App;

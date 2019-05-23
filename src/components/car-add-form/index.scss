@@ -1,0 +1,47 @@
+$colors: (
+		white: #fff,
+		black: #000,
+		grey: #cbcbcc,
+		red: #d74345,
+		green: #88c504,
+);
+
+.form__radio {
+	display: none;
+	&:checked + label {
+		//@each $name, $value in $colors {
+		//	.#{$name} {
+		//		border: 2px solid darken($value, 25%);
+		//		border-radius: 50%;
+		//	}
+		//} // !@each
+	} // !&:checked + label
+}
+
+label {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	//border-radius: 50%;
+	cursor: pointer;
+	span {
+		display: block;
+		border-radius: 50%;
+		width: 100%;
+		height: 100%;
+		transition: transform .2s ease-in-out;
+		&:first-child {
+			border: 1px solid #cbcbcc;
+		}
+		&:hover {
+			border: 4px solid #c4092f;
+
+		}
+		@each $name, $value in $colors {
+			&.#{$name} {
+				background: $value;
+			}
+		}
+	}
+}
