@@ -6,11 +6,11 @@ import './index.scss'
 
 const Main = ({ clazz }) => {
 	return (
-		<div className={`${clazz} main`}>
+		<main className={`${clazz} main`}>
 			<div className='main__inner'>
 				<App/>
 			</div>
-		</div>
+		</main>
 	)
 };
 

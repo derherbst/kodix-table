@@ -8,7 +8,7 @@ const Header = ({clazz}) => {
 		<header className={`${clazz} header`}>
 			<div className="header__inner">
 				<div className="header__logo">
-					{/*<div className="logo"></div>*/}
+					<div className="logo"></div>
 				</div>
 			</div>
 		</header>

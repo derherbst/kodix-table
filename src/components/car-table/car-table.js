@@ -1,61 +1,76 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react'
 
-import './index.scss';
+import './index.scss'
 
 const CarTable = () => {
-	const renderRow = (item, idx) => {
-		const { id, title, count, total } = item;
-		return (
-			<tr key={id}>
-				<td>{idx + 1}</td>
-				<td>{title}</td>
-				<td>{count}</td>
-				<td>${total}</td>
-				<td>
-					{/*<button*/}
-					{/*	onClick={() => onDelete(id)}*/}
-					{/*	className="btn btn-outline-danger btn-sm float-right">*/}
-					{/*	<i className="fa fa-trash-o" />*/}
-					{/*</button>*/}
-					{/*<button*/}
-					{/*	onClick={() => onIncrease(id)}*/}
-					{/*	className="btn btn-outline-success btn-sm float-right">*/}
-					{/*	<i className="fa fa-plus-circle" />*/}
-					{/*</button>*/}
-					{/*<button*/}
-					{/*	onClick={() => onDecrease(id)}*/}
-					{/*	className="btn btn-outline-warning btn-sm float-right">*/}
-					{/*	<i className="fa fa-minus-circle" />*/}
-					{/*</button>*/}
-				</td>
-			</tr>
-		);
-	};
+    const [cars, setCars] = useState([
+        {
+            id: 1,
+            title: '1.6 MT Ambiente 85 л.с. МКПП',
+            description:
+                '+ доп. опция Радио-навигационная система Amundasen 2DIN, CD, MP3',
+            year: 2012,
+            color: 'red',
+            status: 'pending',
+            price: 1689000,
+        },
+        {
+            id: 2,
+            title: '1.6 MT Ambiente 85 л.с. МКПП',
+            description: '',
+            year: 2015,
+            color: 'white',
+            status: 'pending',
+            price: 2519000,
+        },
+    ])
 
-	return (
-		<div className="shopping-cart-table">
-			<h2>Your Order</h2>
-			<table className="table">
-				<thead>
-				<tr>
-					<th>#</th>
-					<th>Item</th>
-					<th>Count</th>
-					<th>Price</th>
-					<th>Action</th>
-				</tr>
-				</thead>
+    const renderRow = (item, idx) => {
+        const { id, title, description, year, color, status, price } = item
+        return (
+            <div key={id} className='table__row'>
+                <div className='table__cell table__cell--title'>
+                    <span>{title}</span>
+                </div>
+                <div className='table__cell table__cell--descr'>
+                    <span className='table__cell-val table__cell-val--descr'>
+                        {description}
+                    </span>
+                </div>
+                <div className='table__cell table__cell--year'>{year}</div>
+                <div className='table__cell table__cell--color'>{color}</div>
+                <div className='table__cell table__cell--status'>{status}</div>
+                <div className='table__cell table__cell--price'>{price}</div>
+                <div className='table__cell table__cell--remove'>
+                    <button
+                        // onClick={() => onDelete(id)}
+                        className='btn'
+                    >
+                        Удалить
+                    </button>
+                </div>
+            </div>
+        )
+    }
 
-				<tbody>
-				{/*{ items.map(renderRow) }*/}
-				</tbody>
-			</table>
+    return (
+        <div className='table'>
+            <h2 className='table__title'>Автомобилив наличии</h2>
+            <div className='table__wrap'>
+                <div className='table__header'>
+                    <div className='table__row table__row--header'>
+                        <span>Название</span>
+                        <span>Год</span>
+                        <span>Цвет</span>
+                        <span>Статус</span>
+                        <span>Цена</span>
+                        <span>Action</span>
+                    </div>
+                </div>
+                <div className='table__body'>{cars.map(renderRow)}</div>
+            </div>
+        </div>
+    )
+}
 
-			<div className="total">
-				{/*Total: ${total}*/}
-			</div>
-		</div>
-	)
-};
-
-export default CarTable;
+export default CarTable

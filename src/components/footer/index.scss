@@ -1,9 +1,9 @@
 @import "../../static/styles/mixins";
 
-.header {
+.footer {
 	display: flex;
-	min-height: 80px;
 	background-color: #282d30;
+	padding-top: 40px;
 	@include tablet {
 		min-height: 100px;
 	}
@@ -12,14 +12,14 @@
 	}
 }
 
-.header__inner {
+.footer__inner {
 	width: 100%;
 	padding: 0 10px;
 }
 
-.header__logo {
-	width: 297px;
-	height: 63px;
-	background: url("../../static/images/logo.png") no-repeat center center;
-	background-size: contain;
+.footer__content {
+	text-align: center;
+	font-size: 11px;
+	color: #fff;
+	font-weight: 300;
 }
