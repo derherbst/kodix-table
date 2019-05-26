@@ -2,14 +2,7 @@
 
 .header {
 	display: flex;
-	min-height: 80px;
 	background-color: #282d30;
-	@include tablet {
-		min-height: 100px;
-	}
-	@include desktop {
-		min-height: 200px;
-	}
 }
 
 .header__inner {
@@ -22,4 +15,13 @@
 	height: 63px;
 	background: url("../../static/images/logo.png") no-repeat center center;
 	background-size: contain;
+	position: absolute;
+	top: 13px;
+	@include tablet {
+		width: 495px;
+		height: 102px;
+		left: 56px;
+	}
+	@include desktop {
+	}
 }

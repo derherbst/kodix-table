@@ -1,4 +1,17 @@
+@import "../../static/styles/mixins";
+
 .page {
 	display: grid;
 	grid-template-rows: 80px auto 102px;
+	@include tablet {
+		grid-template-rows: 102px auto 102px;
+	}
+}
+
+.page__body {
+	@include desktop {
+		width: 960px;
+		padding: 0 10px;
+		margin: 0 auto;
+	}
 }

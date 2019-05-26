@@ -1,14 +1,26 @@
-import 'core-js/es/map';
-import 'core-js/es/set';
+import 'core-js/es/map'
+import 'core-js/es/set'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-import './static/styles/index.scss';
+import './static/styles/index.scss'
 
-import App from './components/page';
+import App from './components/page'
 
-import CarsService from './services/cars-service';
-import { CarsServiceProvider } from './components/cars-service-context';
+import CarsService from './services/cars-service'
+import { CarsServiceProvider } from './components/cars-service-context'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import store from './store'
+
+const carService = new CarsService();
+
+ReactDOM.render(
+    <Provider store={store}>
+        <CarsServiceProvider value={carService}>
+            <App />
+        </CarsServiceProvider>
+    </Provider>,
+    document.getElementById('root')
+);

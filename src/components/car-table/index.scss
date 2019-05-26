@@ -1,9 +1,43 @@
+@import "../../static/styles/mixins";
+
+.table {
+	@include tablet {
+		padding: 0 10px;
+		border-radius: 4px;
+	}
+}
+
+.table__wrap {
+	@include tablet {
+		border-radius: 4px;
+		overflow: hidden;
+	}
+}
+
 .table__title {
 	display: none;
+	font-size: 1.25rem;
+	color: #282d30;
+	text-transform: uppercase;
+	font-weight: 600;
+	padding-left: 12px;
+	border-left: 3px solid #8b9497;
+	@include tablet {
+		display: block;
+		margin-bottom: 28px;
+		line-height: 1;
+	}
+	//@include desktop {
+	//	min-height: 200px;
+	//}
 }
 
 .table__header {
 	display: none;
+	@include tablet {
+		display: block;
+		background-color: #c4092f;
+	}
 }
 
 .table__body {
@@ -14,27 +48,47 @@
 }
 
 .table__row {
-	//display: flex;
-	//flex-wrap: wrap;
 	display: grid;
+	align-items: baseline;
 	padding: 20px;
 	border-bottom: 1px solid #e3e4e4;
 	grid-template-columns: 1fr 1fr 1fr 20px 1fr 1fr 1fr;
-	grid-template-rows: 1fr auto 1fr;
-	grid-template-areas: "title title title . color price price"
+	grid-template-rows: auto auto auto;
+	grid-template-areas:"title title title . color price price"
 						"descr descr descr descr descr descr descr"
 						"year status status . remove remove remove";
-	//grid-template-areas:"title title"
-	//"price year"
-	//"descr descr"
-	//"color color"
-	//"status submit";
+	@include tablet {
+		padding: 4px 16px;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: auto auto;
+		grid-template-areas:"title title title year color status price remove"
+							"descr descr descr . . . . . ";
+		&--header {
+			padding: 12px 16px;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+			grid-template-rows: auto;
+			grid-template-areas:"hTitle hTitle hTitle hYear hColor hStatus hPrice .";
+		}
+	}
 	&:first-child {
 		border-top: 1px solid #e3e4e4;
+		@include tablet {
+			border-top: none
+		}
 	}
 	&:last-child {
 		border-bottom: none;
 	}
+}
+
+.table__header-cell {
+	color: #fff;
+	font-size: .9rem;
+	&--title{grid-area: hTitle}
+	&--year{grid-area: hYear}
+	&--price{grid-area: hPrice}
+	&--status{grid-area: hStatus}
+	&--color{grid-area: hColor}
 }
 
 .table__cell {
@@ -42,12 +96,21 @@
 	font-weight: 300;
 	color: #282d30;
 	&--title {grid-area: title}
-	&--price {grid-area: price}
+	&--price {
+		grid-area: price;
+		margin-left: auto;
+		@include tablet {
+			margin-left: 0;
+		}
+	}
 	&--year {grid-area: year}
 	&--descr {grid-area: descr}
 	&--color {grid-area: color}
 	&--status {grid-area: status}
-	&--remove {grid-area: remove}
+	&--remove {
+		grid-area: remove;
+		margin-left: auto;
+	}
 	&--title {
 		//grid-area: title;
 		//order: 1;
@@ -76,5 +139,16 @@
 	&--descr {
 		font-size: 13px;
 		color: #8b9497;
+	}
+}
+
+.btn {
+	&--secondary {
+		background-color: #282d30;
+		border-radius: 25px;
+		padding: 8px 10px;
+		color: #fff;
+		font-weight: 300;
+		font-size: 14px;
 	}
 }
