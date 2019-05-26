@@ -31,8 +31,10 @@
   ],
   "devDependencies": {
     "autoprefixer": "^9.5.1",
+    "core-js-pure": "3.0.1",
     "gh-pages": "^2.0.1",
     "postcss-loader": "^3.0.0",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "raf": "^3.4.1"
   }
 }
