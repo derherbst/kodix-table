@@ -56,6 +56,8 @@ const StatusSelect = (props) => {
 			id='status'
 			styles={customStyles}
 			isSearchable={false}
+			onChange={props.onSelectChange}
+			name={props.name}
 		/>
 	)
 };

@@ -115,14 +115,9 @@ $colors: (
 
 .form__radio {
 	display: none;
-	&:checked + .form__color {
-		//@each $name, $value in $colors {
-		//	.#{$name} {
-		//		border: 2px solid darken($value, 25%);
-		//		border-radius: 50%;
-		//	}
-		//} // !@each
-	} // !&:checked + label
+	&:checked + .form__color span {
+		box-shadow: 0 0 0 4px #c4092f;
+	}
 }
 
 .form__color {

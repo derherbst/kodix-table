@@ -1,3 +1,3 @@
-import CarAddForm from './car-add-form';
+import CarAddFormContainer from './car-add-form-container';
 
-export default CarAddForm;
+export default CarAddFormContainer;

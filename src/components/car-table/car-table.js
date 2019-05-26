@@ -50,7 +50,9 @@ class CarTable extends Component {
                     </span>
                     </div>
                     <div className='table__cell table__cell--year'>{year}</div>
-                    <div className='table__cell table__cell--color'>{color}</div>
+                    <div className='table__cell table__cell--color'>
+                        <span className={`color color--${color}`}></span>
+                    </div>
                     <div className='table__cell table__cell--status'>{status}</div>
                     <div className='table__cell table__cell--price'>{price}</div>
                     <div className='table__cell table__cell--remove'>

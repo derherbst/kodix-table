@@ -23,5 +23,7 @@
 		left: 56px;
 	}
 	@include desktop {
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }

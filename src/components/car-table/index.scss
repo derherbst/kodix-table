@@ -27,9 +27,6 @@
 		margin-bottom: 28px;
 		line-height: 1;
 	}
-	//@include desktop {
-	//	min-height: 200px;
-	//}
 }
 
 .table__header {
@@ -85,10 +82,16 @@
 	color: #fff;
 	font-size: .9rem;
 	&--title{grid-area: hTitle}
-	&--year{grid-area: hYear}
+	&--year{
+		text-align: center;
+		grid-area: hYear;
+	}
 	&--price{grid-area: hPrice}
 	&--status{grid-area: hStatus}
-	&--color{grid-area: hColor}
+	&--color{
+		text-align: center;
+		grid-area: hColor
+	}
 }
 
 .table__cell {
@@ -103,9 +106,16 @@
 			margin-left: 0;
 		}
 	}
-	&--year {grid-area: year}
+	&--year {
+		text-align: center;
+		grid-area: year;
+	}
 	&--descr {grid-area: descr}
-	&--color {grid-area: color}
+	&--color {
+		text-align: center;
+		align-self: center;
+		grid-area: color;
+	}
 	&--status {grid-area: status}
 	&--remove {
 		grid-area: remove;
@@ -150,5 +160,39 @@
 		color: #fff;
 		font-weight: 300;
 		font-size: 14px;
+		@include tablet {
+			color: #8b9497;
+			background: none;
+			border: none;
+			&:hover {
+				background-color: #282d30;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.color {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	&--red {
+		background-color: #d74345;
+	}
+	&--white {
+		background-color: #fff;
+	}
+	&--black {
+		background-color: #000;
+	}
+	&--black {
+		background-color: #000;
+	}
+	&--grey {
+		background-color: #cbcbcc;
+	}
+	&--green {
+		background-color: #88c504;
 	}
 }
