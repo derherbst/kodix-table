@@ -23,20 +23,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all",
-      "IE 10"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "IE 10"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "IE 10",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "autoprefixer": "^9.5.1",
     "gh-pages": "^2.0.1",
