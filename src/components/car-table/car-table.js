@@ -10,27 +10,6 @@ import { compose } from "../../utils";
 import './index.scss'
 
 class CarTable extends Component {
-    // const [cars, setCars] = useState([
-    //     {
-    //         id: 1,
-    //         title: '1.6 MT Ambiente 85 л.с. МКПП',
-    //         description:
-    //             '+ доп. опция Радио-навигационная система Amundasen 2DIN, CD, MP3',
-    //         year: 2012,
-    //         color: 'red',
-    //         status: 'pending',
-    //         price: 1689000,
-    //     },
-    //     {
-    //         id: 2,
-    //         title: '1.6 MT Ambiente 85 л.с. МКПП',
-    //         description: '',
-    //         year: 2015,
-    //         color: 'white',
-    //         status: 'pending',
-    //         price: 2519000,
-    //     },
-    // ]);
 
     componentDidMount() {
         this.props.fetchCars();

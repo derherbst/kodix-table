@@ -136,10 +136,12 @@ const mapStateToProps = () => {
 };
 
 const mapDispatchToProps = () => {
+	return {
 
+	}
 };
 
-export default withFormik({
+export default compose(withFormik({
 	mapPropsToValues: (props) => {
 		console.log(props);
 		return {
@@ -158,4 +160,6 @@ export default withFormik({
 			setSubmitting(false);
 		}, 1000);
 	},
-})(CarAddForm);
+}),
+	withCarsService(),
+	connect(mapStateToProps, mapDispatchToProps))(CarAddForm);
