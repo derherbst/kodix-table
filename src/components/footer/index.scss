@@ -2,13 +2,10 @@
 
 .footer {
 	display: flex;
+	align-items: center;
 	background-color: #282d30;
-	padding-top: 40px;
 	@include tablet {
 		min-height: 100px;
-	}
-	@include desktop {
-
 	}
 }
 

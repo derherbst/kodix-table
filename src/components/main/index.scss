@@ -1,3 +1,5 @@
+@import "../../static/styles/mixins";
+
 .main {
 	display: flex;
 	flex-direction: column;
@@ -6,4 +8,10 @@
 .main__inner {
 	display: flex;
 	flex-direction: column;
+	@include tablet {
+		margin-bottom: 420px;
+	}
+	@include desktop {
+		margin-bottom: 330px;
+	}
 }
