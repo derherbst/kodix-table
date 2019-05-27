@@ -8,7 +8,7 @@ import { compose } from "../../utils";
 
 import './index.scss';
 
-const CarAddFormContainer = () => {
+const CarAddFormContainer = (props) => {
 	const defaultCar = {
 		title: '',
 		description: '',
@@ -20,28 +20,22 @@ const CarAddFormContainer = () => {
 
 	const statusOptions = [
 		{ value: 'in_stock', label: 'В наличии' },
-		{ value: 'pednding', label: 'Ожидается' },
+		{ value: 'pending', label: 'Ожидается' },
 		{ value: 'out_of_stock', label: 'Нет в наличии' }
 	];
 
 	return (
-		<CarAddForm car={defaultCar} selectOptions={statusOptions}/>
+		<CarAddForm car={defaultCar} selectOptions={statusOptions} addCar={props.carAdded}/>
 	)
 };
 
-const mapStateToProps = () => {
+const mapDispatchToProps = (dispatch, {value}) => {
 	return {
-
-	}
-};
-
-const mapDispatchToProps = () => {
-	return {
-
+		carAdded: (value) => dispatch(carAddedToTable(value))
 	}
 };
 
 export default compose(
 	withCarsService(),
-	connect(mapStateToProps, mapDispatchToProps)
+	connect(null, mapDispatchToProps)
 )(CarAddFormContainer);

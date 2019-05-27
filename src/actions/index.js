@@ -18,10 +18,10 @@ const carsError = (error) => {
 	};
 };
 
-export const carAddedToTable = (carId) => {
+export const carAddedToTable = (car) => {
 	return {
 		type: 'CAR_ADDED_TO_TABLE',
-		payload: carId
+		payload: car
 	};
 };
 

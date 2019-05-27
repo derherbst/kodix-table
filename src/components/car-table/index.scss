@@ -107,8 +107,11 @@
 		}
 	}
 	&--year {
-		text-align: center;
+		text-align: left;
 		grid-area: year;
+		@include tablet {
+			text-align: center;
+		}
 	}
 	&--descr {grid-area: descr}
 	&--color {
