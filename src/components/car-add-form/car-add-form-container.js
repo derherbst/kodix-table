@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 
 import CarAddForm from './car-add-form';
-import {fetchCars, carAddedToTable, carRemovedFromTable} from '../../actions';
+import {carAddedToTable} from '../../actions';
 import { withCarsService } from '../hoc';
 import { compose } from "../../utils";
 
@@ -29,7 +29,7 @@ const CarAddFormContainer = (props) => {
 	)
 };
 
-const mapDispatchToProps = (dispatch, {value}) => {
+const mapDispatchToProps = (dispatch) => {
 	return {
 		carAdded: (value) => dispatch(carAddedToTable(value))
 	}

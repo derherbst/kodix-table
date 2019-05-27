@@ -8,7 +8,7 @@ const addCar = (state, car) => {
 
 	const newCar = {
 		...car,
-		id: cars.length + 1
+		id: cars[cars.length-1].id + 1
 	};
 
 	return {

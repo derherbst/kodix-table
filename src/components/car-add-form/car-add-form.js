@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withFormik } from 'formik';
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
 
 import { carAddedToTable } from '../../actions';
 import { withCarsService } from '../hoc';
@@ -148,11 +147,12 @@ export default compose(withFormik({
 			price: props.car.price,
 		}
 	},
-	handleSubmit: (values, {setStatus, setSubmitting, props}) => {
+	handleSubmit: (values, {setValues, setSubmitting, props}) => {
+		// setValues({
+		// 	...values,
+		// 	colorValue: this.state.colorValue
+		// });
 		props.addCar(values);
-		alert(JSON.stringify({
-			...values,
-		}, null, 2));
 		setSubmitting(false);
 	},
 }),

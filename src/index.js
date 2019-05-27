@@ -18,8 +18,6 @@ import store from './store'
 
 const carService = new CarsService();
 
-console.log(123123444);
-
 ReactDOM.render(
     <Provider store={store}>
         <CarsServiceProvider value={carService}>

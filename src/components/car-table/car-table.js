@@ -1,8 +1,8 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component } from 'react'
 
 import { connect } from "react-redux";
 
-import {fetchCars, carAddedToTable, carRemovedFromTable} from '../../actions';
+import {fetchCars, carRemovedFromTable} from '../../actions';
 import { withCarsService } from '../hoc';
 
 import { compose } from "../../utils";
@@ -74,7 +74,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, { carsService }) => {
-    console.log(carsService);
     return {
         fetchCars: fetchCars(carsService, dispatch),
         onRemoveFromTable: (id) => dispatch(carRemovedFromTable(id))
